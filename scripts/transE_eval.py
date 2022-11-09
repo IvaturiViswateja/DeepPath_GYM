@@ -1,4 +1,4 @@
-import Pickle
+import pickle
 import sys
 import numpy as np
 
