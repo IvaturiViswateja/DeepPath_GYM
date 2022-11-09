@@ -17,7 +17,7 @@ feature_stats = dataPath_ + '/path_stats.txt'
 relationId_path ='/content/DeepPath_GYM/scripts/NELL-995/' + 'relation2id.txt'
 ent_id_path = '/content/DeepPath_GYM/scripts/NELL-995/' + 'entity2id.txt'
 rel_id_path = '/content/DeepPath_GYM/scripts/NELL-995/' + 'relation2id.txt'
-test_data_path = './content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation + '/sort_test.pairs'
+test_data_path = '/content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation + '/sort_test.pairs'
 
 def bfs_two(e1,e2,path,kb,kb_inv):
 	start = 0
