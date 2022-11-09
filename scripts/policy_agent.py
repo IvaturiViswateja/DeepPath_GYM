@@ -1,6 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 import tensorflow as tf
+from tensorflow.python.framework import ops
 import numpy as np
 import collections
 from itertools import count
@@ -179,7 +180,8 @@ def REINFORCE(training_pairs, policy_nn, num_episodes):
 
 def retrain():
 	print('Start retraining')
-	tf.reset_default_graph()
+	# tf.reset_default_graph()
+	ops.reset_default_graph()
 	policy_network = PolicyNetwork(scope = 'supervised_policy')
 
 	f = open(relationPath)
@@ -198,7 +200,8 @@ def retrain():
 	print('Retrained model saved')
 
 def test():
-	tf.reset_default_graph()
+	# tf.reset_default_graph()
+	ops.reset_default_graph()
 	policy_network = PolicyNetwork(scope = 'supervised_policy')
 
 	f = open(relationPath)
