@@ -9,10 +9,10 @@ from keras.layers import Dense, Activation
 
 relation = sys.argv[1]
 
-dataPath_ = '../NELL-995/tasks/'  + relation
+dataPath_ = '/content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation
 featurePath = dataPath_ + '/path_to_use.txt'
 feature_stats = dataPath_ + '/path_stats.txt'
-relationId_path = '../NELL-995/relation2id.txt'
+relationId_path = '/content/DeepPath_GYM/scripts/NELL-995/relation2id.txt'
 
 def train(kb, kb_inv, named_paths):
 	f = open(dataPath_ + '/train.pairs')
