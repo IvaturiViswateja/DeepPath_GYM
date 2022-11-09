@@ -10,7 +10,7 @@ import sys
 
 from networks import policy_nn, value_nn
 from utils import *
-from env import Env
+from env import Knowledgegraph_gym
 
 
 relation = sys.argv[1]
@@ -60,7 +60,7 @@ def REINFORCE(training_pairs, policy_nn, num_episodes):
 		print('Episode %d' % i_episode)
 		print('Training sample: ', train[i_episode][:-1])
 
-		env = Env(dataPath, train[i_episode])
+		env = Knowledgegraph_gym(dataPath, train[i_episode])
 
 		sample = train[i_episode].split()
 		state_idx = [env.entity2id_[sample[0]], env.entity2id_[sample[1]], 0]
@@ -224,7 +224,7 @@ def test():
 
 		for episode in range(test_num):
 			print('Test sample %d: %s' % (episode,test_data[episode][:-1]))
-			env = Env(dataPath, test_data[episode])
+			env = Knowledgegraph_gym(dataPath, test_data[episode])
 			sample = test_data[episode].split()
 			state_idx = [env.entity2id_[sample[0]], env.entity2id_[sample[1]], 0]
 

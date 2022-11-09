@@ -7,7 +7,7 @@ import sys
 
 from networks import policy_nn
 from utils import *
-from env import Env
+from env import Knowledgegraph_gym
 from BFS.KB import KB
 from BFS.BFS import BFS
 import time
@@ -64,7 +64,7 @@ def train():
 			print("Episode %d" % episode)
 			print('Training Sample:', train_data[episode%num_samples][:-1])
 
-			env = Env(dataPath, train_data[episode%num_samples])
+			env = Knowledgegraph_gym(dataPath, train_data[episode%num_samples])
 			sample = train_data[episode%num_samples].split()
 
 			try:
@@ -108,7 +108,7 @@ def test(test_episodes):
 		print('Model reloaded')
 		for episode in range(len(test_data)):
 			print('Test sample %d: %s' % (episode,test_data[episode][:-1]))
-			env = Env(dataPath, test_data[episode])
+			env = Knowledgegraph_gym(dataPath, test_data[episode])
 			sample = test_data[episode].split()
 			state_idx = [env.entity2id_[sample[0]], env.entity2id_[sample[1]], 0]
 			for t in count():
