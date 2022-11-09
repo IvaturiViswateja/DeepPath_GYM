@@ -7,7 +7,7 @@ relation = sys.argv[1]
 dataPath_ = '/content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation
 
 ent_id_path = '/content/DeepPath_GYM/scripts/NELL-995/' + 'entity2id.txt'
-rel_id_path = './content/DeepPath_GYM/scripts/NELL-995/' + 'relation2id.txt'
+rel_id_path = '/content/DeepPath_GYM/scripts/NELL-995/' + 'relation2id.txt'
 test_data_path = '/content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation + '/sort_test.pairs'
 
 f1 = open(ent_id_path)
