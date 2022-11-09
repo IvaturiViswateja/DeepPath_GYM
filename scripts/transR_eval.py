@@ -4,11 +4,11 @@ import numpy as np
 
 relation = sys.argv[1]
 
-dataPath_ = '../NELL-995/tasks/'  + relation
+dataPath_ = '/content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation
 
-ent_id_path = '../NELL-995/' + 'entity2id.txt'
-rel_id_path = '../NELL-995/' + 'relation2id.txt'
-test_data_path = '../NELL-995/tasks/'  + relation + '/sort_test.pairs'
+ent_id_path = '/content/DeepPath_GYM/scripts/NELL-995/' + 'entity2id.txt'
+rel_id_path = '/content/DeepPath_GYM/scripts/NELL-995/' + 'relation2id.txt'
+test_data_path = '/content/DeepPath_GYM/scripts/NELL-995/tasks/'  + relation + '/sort_test.pairs'
 
 f1 = open(ent_id_path)
 f2 = open(rel_id_path)
