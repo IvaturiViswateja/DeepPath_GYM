@@ -22,7 +22,8 @@ relationPath = dataPath + 'tasks/' + relation + '/' + 'train_pos'
 class PolicyNetwork(object):
 
 	def __init__(self, scope = 'policy_network', learning_rate = 0.001):
-		self.initializer = tf.contrib.layers.xavier_initializer()
+		# self.initializer = tf.contrib.layers.xavier_initializer()
+		self.initializer = tf.initializers.glorot_uniform()
 		with tf.variable_scope(scope):
 			self.state = tf.placeholder(tf.float32, [None, state_dim], name = 'state')
 			self.action = tf.placeholder(tf.int32, [None], name = 'action')
