@@ -148,8 +148,8 @@ def evaluate_logic():
 			y_true.append(test_labels[idx])
 		else:
 			query = sample[0]
-			count = zip(y_score, y_true)
-			count.sorted(key = lambda x:x[0], reverse=True)
+			# count = zip(y_score, y_true)
+			count = sorted(zip(y_score, y_true),key = lambda x:x[0], reverse=True)
 			ranks = []
 			correct = 0
 			for idx_, item in enumerate(count):

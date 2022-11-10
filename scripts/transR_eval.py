@@ -74,8 +74,8 @@ for idx, sample in enumerate(test_pairs):
 		y_true.append(test_labels[idx])
 	else:
 		query = sample[0]
-		count = zip(y_score, y_true)
-		count.sorted(key = lambda x:x[0], reverse=True)
+		# count = zip(y_score, y_true)
+		count = sorted(zip(y_score, y_true),key = lambda x:x[0], reverse=True)
 		#print count
 		ranks = []
 		correct = 0

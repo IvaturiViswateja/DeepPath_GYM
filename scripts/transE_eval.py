@@ -70,7 +70,7 @@ for idx, sample in enumerate(test_pairs):
 	else:
 		query = sample[0]
 		count = zip(y_score, y_true, query_samples)
-		count.sort(key = lambda x:x[0], reverse=True)
+		count = sorted(zip(y_score, y_true, query_samples),key = lambda x:x[0], reverse=True)
 
 		ranks = []
 		correct = 0
