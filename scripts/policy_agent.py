@@ -25,9 +25,9 @@ class PolicyNetwork(object):
 		# self.initializer = tf.contrib.layers.xavier_initializer()
 		self.initializer = tf.initializers.glorot_uniform()
 		with tf.compat.v1.variable_scope(scope):
-			self.state = tf.placeholder(tf.float32, [None, state_dim], name = 'state')
-			self.action = tf.placeholder(tf.int32, [None], name = 'action')
-			self.target = tf.placeholder(tf.float32, name = 'target')
+			self.state = tf.compat.v1.placeholder(tf.float32, [None, state_dim], name = 'state')
+			self.action = tf.compat.v1.placeholder(tf.int32, [None], name = 'action')
+			self.target = tf.compat.v1.placeholder(tf.float32, name = 'target')
 			self.action_prob = policy_nn(self.state, state_dim, action_space, self.initializer)
 
 			action_mask = tf.cast(tf.one_hot(self.action, depth = action_space), tf.bool)
