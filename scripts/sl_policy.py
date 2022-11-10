@@ -23,7 +23,7 @@ class SupervisedPolicy(object):
 	def __init__(self, learning_rate = 0.001):
 		# self.initializer = tf.contrib.layers.xavier_initializer()
 		self.initializer = tf.initializers.glorot_uniform()
-		with tf.variable_scope('supervised_policy'):
+		with tf.compat.v1.variable_scope('supervised_policy'):
 			self.state = tf.placeholder(tf.float32, [None, state_dim], name = 'state')
 			self.action = tf.placeholder(tf.int32, [None], name = 'action')
 			self.action_prob = policy_nn(self.state, state_dim, action_space, self.initializer)
